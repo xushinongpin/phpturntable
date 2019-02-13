@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <example-component></example-component>
+    <example-component>
+        {{ csrf_field() }}
+    </example-component>
 @endsection

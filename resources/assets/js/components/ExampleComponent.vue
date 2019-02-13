@@ -129,6 +129,7 @@
         },
         created() {
             this.init_prize_list();
+            this.read();
         },
         computed: {
             toast_title() {
@@ -143,6 +144,14 @@
             }
         },
         methods: {
+            //ajax获取数据
+            read(){
+                window.axios.post('/truntable',{'data': 'award'}).then(({ data }) => {
+                    console.log('wwwwwwww');
+                    console.log(data);
+                    console.log('qqqqqqqqqqqqqq');
+                });
+            },
             //此方法为处理奖品数据
             init_prize_list(list) {},
             rotate_handle() {

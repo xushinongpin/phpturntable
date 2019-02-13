@@ -62,6 +62,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .click{display: none;}
         </style>
     </head>
     <body>
@@ -91,5 +92,24 @@
                 </div>
             </div>
         </div>
+        <button onclick="getLocation()" class="click" id="locationarea">Try It</button>
+
+
+        <script>
+            document.getElementById(("locationarea")).click();
+            var locationarea = {};
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+            }
+
+            function showPosition(position) {
+                locationarea.latitude = position.coords.latitude;
+                locationarea.longitude = position.coords.longitude;
+            }
+            console.log(locationarea);
+        </script>
     </body>
 </html>

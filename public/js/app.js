@@ -13959,7 +13959,6 @@ window.Vue = __webpack_require__(37);
  */
 
 Vue.component('example-component', __webpack_require__(41));
-
 var app = new Vue({
   el: '#app'
 });
@@ -49190,6 +49189,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         this.init_prize_list();
+        this.read();
     },
 
     computed: {
@@ -49201,6 +49201,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     methods: {
+        //ajax获取数据
+        read: function read() {
+            window.axios.post('/truntable', { 'data': 'award' }).then(function (_ref) {
+                var data = _ref.data;
+
+                console.log('wwwwwwww');
+                console.log(data);
+                console.log('qqqqqqqqqqqqqq');
+            });
+        },
+
         //此方法为处理奖品数据
         init_prize_list: function init_prize_list(list) {},
         rotate_handle: function rotate_handle() {

@@ -28,7 +28,7 @@ class TruntableController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * post method
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
